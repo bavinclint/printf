@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "Renaming protoprintf.h to main.h"
+git commit -m "Testing out collaboration"
 git push
