@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "Updates"
+git commit -m "Updating the char switch case"
 git push
