@@ -5,6 +5,6 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
-
+char *prep_string(char *str, specifier spec);
 
 #endif
