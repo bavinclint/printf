@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include "protoprintf.h"
+
+#include "main.h"
 
 /**
  * _printf - a function that produces output according to a format.
