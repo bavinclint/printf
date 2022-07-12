@@ -13,6 +13,7 @@
 int _printf(const char *format, ...)
 {
 	int len = _strlen(format);
+	char *mutformat = _strdup(format);
 	int index = 0;
 	char *updatedformat;
 
@@ -21,26 +22,26 @@ int _printf(const char *format, ...)
 	
 	while (index < len)
 	{
-		if (format[index] == '%')
+		if (mutformat[index] == '%')
 		{
-			if (format[index + 1] == 'c')
+			if (mutformat[index + 1] == 'c')
 			{
 				char character = va_arg(ap, int);
 				updatedformat = _charcat(updatedformat, character);
 			}
 			index += 2;
-		} else if (format[index + 1] == 's')
+		} else if (mutformat[index + 1] == 's')
 		{
 			char *character = va_arg(ap, char *);
 			int cLen = _strlen(character);
 			updatedformat = _strncat(updatedformat, character, cLen);
 		} else
 		{
-			updatedformat = _charcat(updatedformat, format[index]);
+			updatedformat = _charcat(updatedformat, mutformat[index]);
 			index++;
 		}
 	}
-	
+
 	_puts(updatedformat);
 	return (_strlen(updatedformat) - 1);
 }

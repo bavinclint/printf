@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "Fixed bugs to the code though it needs more improvement"
+git commit -m "Trying to figure out the Segmentation fault"
 git push
