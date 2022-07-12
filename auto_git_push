@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "Solving for the first quiz question, first trial"
+git commit -m "Fixing bugs from initial trial"
 git push
