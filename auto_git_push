@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "Testing out collaboration"
+git commit -m "Fixed bugs to the code though it needs more improvement"
 git push

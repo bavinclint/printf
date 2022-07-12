@@ -1,6 +1,10 @@
 #include <limits.h>
 #include <stdio.h>
+<<<<<<< HEAD
 #include "../main.h"
+=======
+#include "main.h"
+>>>>>>> fed965b0b3900342fe75abaa8ac218a19a88a2c1
 
 /**
  * main - Entry point
@@ -9,6 +13,7 @@
  */
 int main(void)
 {
+<<<<<<< HEAD
 	int len;
 	int len2;
 	unsigned int ui;
@@ -41,4 +46,26 @@ int main(void)
 	_printf("Unknown:[%r]\n");
 	printf("Unknown:[%r]\n");
 	return (0);
+=======
+    int len;
+    int len2;
+	int testing = 0;
+    /*
+	unsigned int ui;
+	void *addr;
+   */
+
+    len = _printf("Let's try to printf a simple sentence.\n");
+    len2 = printf("Let's try to printf a simple sentence.\n");
+	testing = len + len2;
+	printf("%d", testing);
+
+	return (0);
+    /*
+	ui = (unsigned int)INT_MAX + 1024;
+    addr = (void *)0x7ffe637541f0;
+    _printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
+	*/
+>>>>>>> fed965b0b3900342fe75abaa8ac218a19a88a2c1
 }
