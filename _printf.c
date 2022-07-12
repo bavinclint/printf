@@ -34,12 +34,13 @@ int _printf(const char *format, ...)
 			char *character = va_arg(ap, char *);
 			int cLen = _strlen(character);
 			updatedformat = _strncat(updatedformat, character, cLen);
-		}else
+		} else
 		{
 			updatedformat = _charcat(updatedformat, format[index]);
 			index++;
 		}
 	}
+	
 	_puts(updatedformat);
 	return (_strlen(updatedformat) - 1);
 }
