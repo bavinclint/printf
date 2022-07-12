@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -14,8 +15,9 @@ int _printf(const char *format, ...)
 {
 	int len = _strlen(format);
 	char *mutformat = _ownstrdup(format);
-	int index = 0;
-	char *updatedformat;
+	int index = 0, uindex = 0;
+	char *updatedformat = malloc(len);
+	char *newformat;
 
 	va_list ap;
 	va_start(ap, format);
@@ -27,24 +29,32 @@ int _printf(const char *format, ...)
 			if (mutformat[index + 1] == 'c')
 			{
 				char character = va_arg(ap, int);
-				updatedformat = _charcat(updatedformat, character);
+				updatedformat[uindex] = character;
+				len -= 1;
 				index += 2;
+				uindex++;
 			}
 			else if (mutformat[index + 1] == 's')
 			{
-				char *character = va_arg(ap, char *);
-				int cLen = _strlen(character);
-				updatedformat = _strncat(updatedformat, character, cLen);
+				char *myString = va_arg(ap, char *);
+				int cLen = _strlen(myString);
+				len += cLen;
+				newformat = realloc(updatedformat, (len + cLen - 2));
+				updatedformat = newformat;
+				updatedformat = _strncat(updatedformat, myString, uindex, cLen);
 				index += 2;
-			} else
-			{
-				updatedformat = _charcat(updatedformat, mutformat[index]);
-				index++;
+				uindex += cLen;
 			}
-		}
+		 } else
+		 {
+			updatedformat[uindex] = mutformat[index];
+			index++;
+			uindex++;
+		 }
 	}
 
 	free(mutformat);
 	_puts(updatedformat);
-	return (_strlen(updatedformat) - 1);
+	free(updatedformat);
+	return (len);
 }

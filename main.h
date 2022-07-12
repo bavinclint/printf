@@ -7,8 +7,7 @@
 int _putchar(char c);
 int _strlen(const char *s);
 void _puts(char *s);
-char *_strncat(char *dest, char *src, int n);
-char *_charcat(char *dest, char src);
+char *_strncat(char *dest, char *src, int i, int n);
 int _printf(const char *format, ...);
 char *_ownstrdup(const char *str);
 

@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "Trying to figure out the Segmentation fault"
+git commit -m "Fixed Segmentation Fault"
 git push

@@ -11,16 +11,16 @@ int main(void)
 {
     int len;
     int len2;
-	int testing = 0;
+	/*int testing = 0;*/
     /*
 	unsigned int ui;
 	void *addr;
    */
 
-    /*len = _printf("Let's try to printf a simple sentence.\n");*/
+    len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
-	testing = len + len2;
-	printf("%d", testing);
+	/*testing = len + len2;*/
+	printf("%d %d", len, len2);
 
 	return (0);
     /*
