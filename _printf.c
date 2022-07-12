@@ -28,17 +28,19 @@ int _printf(const char *format, ...)
 			{
 				char character = va_arg(ap, int);
 				updatedformat = _charcat(updatedformat, character);
+				index += 2;
 			}
-			index += 2;
-		} else if (mutformat[index + 1] == 's')
-		{
-			char *character = va_arg(ap, char *);
-			int cLen = _strlen(character);
-			updatedformat = _strncat(updatedformat, character, cLen);
-		} else
-		{
-			updatedformat = _charcat(updatedformat, mutformat[index]);
-			index++;
+			else if (mutformat[index + 1] == 's')
+			{
+				char *character = va_arg(ap, char *);
+				int cLen = _strlen(character);
+				updatedformat = _strncat(updatedformat, character, cLen);
+				index += 2;
+			} else
+			{
+				updatedformat = _charcat(updatedformat, mutformat[index]);
+				index++;
+			}
 		}
 	}
 
