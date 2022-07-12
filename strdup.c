@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib.h>
+#define NULL ((char *)0)
 
 /**
  * _strdup - Returns a pointer to a newly-allocated space in memory
