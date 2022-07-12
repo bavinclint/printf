@@ -13,7 +13,7 @@
 int _printf(const char *format, ...)
 {
 	int len = _strlen(format);
-	char *mutformat = _strdup(format);
+	char *mutformat = _ownstrdup(format);
 	int index = 0;
 	char *updatedformat;
 
@@ -44,6 +44,7 @@ int _printf(const char *format, ...)
 		}
 	}
 
+	free(mutformat);
 	_puts(updatedformat);
 	return (_strlen(updatedformat) - 1);
 }

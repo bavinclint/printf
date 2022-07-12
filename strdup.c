@@ -1,8 +1,3 @@
-/*
- * File: 1-strdup.c
- * Auth: Brennan D Baraban
- */
-
 #include "main.h"
 #include <stdlib.h>
 
@@ -14,7 +9,7 @@
  * Return: If str == NULL or insufficient memory is available - NULL.
  *         Otherwise - a pointer to the duplicated string.
  */
-char *_strdup(char *str)
+char *_ownstrdup(const char *str)
 {
 	char *duplicate;
 	int index, len = 0;

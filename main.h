@@ -10,6 +10,6 @@ void _puts(char *s);
 char *_strncat(char *dest, char *src, int n);
 char *_charcat(char *dest, char src);
 int _printf(const char *format, ...);
-char *_strdup(char *str)
+char *_ownstrdup(char *str)
 
 #endif
