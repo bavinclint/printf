@@ -23,16 +23,20 @@ int _printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
-			if (format[index + 1] == 'c'|| format[index + 1] == 's')
+			if (format[index + 1] == 'c')
 			{
-				char *character = va_arg(ap, char *);
-				int cLen = _strlen(character);
-				updatedformat = _strncat(updatedformat, character, cLen);
+				char character = va_arg(ap, int);
+				updatedformat = _charcat(updatedformat, character);
 			}
 			index += 2;
-		} else
+		} else if (format[index + 1] == 's')
 		{
-			updatedformat = _strncat(updatedformat, format[index], 1);
+			char *character = va_arg(ap, char *);
+			int cLen = _strlen(character);
+			updatedformat = _strncat(updatedformat, character, cLen);
+		}else
+		{
+			updatedformat = _charcat(updatedformat, format[index]);
 			index++;
 		}
 	}

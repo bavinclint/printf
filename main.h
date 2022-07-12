@@ -8,6 +8,7 @@ int _putchar(char c);
 int _strlen(const char *s);
 void _puts(char *s);
 char *_strncat(char *dest, char *src, int n);
+char *_charcat(char *dest, char src);
 int _printf(const char *format, ...);
 
 
