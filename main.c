@@ -1,6 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
-#include "../main.h"
+#include "main.h"
 
 /**
  * main - Entry point
@@ -17,7 +17,7 @@ int main(void)
 	void *addr;
    */
 
-    len = _printf("Let's try to printf a simple sentence.\n");
+    /*len = _printf("Let's try to printf a simple sentence.\n");*/
     len2 = printf("Let's try to printf a simple sentence.\n");
 	testing = len + len2;
 	printf("%d", testing);
