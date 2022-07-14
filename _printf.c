@@ -45,6 +45,13 @@ int _printf(const char *format, ...)
 				index += 2;
 				uindex += sLen;
 			}
+			else if(format[index + 1] == '%')
+			{
+				updatedformat[uindex] = '%';
+				len -= 1;
+				index += 2;
+				uindex++;
+			}
 		 } else
 		 {
 			updatedformat[uindex] = format[index];
