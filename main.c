@@ -17,8 +17,8 @@ int main(void)
    */
 
     len = _printf("Chelsea Football Club\n");
-	len3 = _printf("%s is an arid area plant\n", "Cactus");
-	len4 = printf("%s is an arid area plant\n", "Cactus");
+	len3 = _printf("%s is an arid area plant but is made of up to 94%% of water when saturated\n", "Cactus");
+	len4 = printf("%s is an arid area plant but is made of up to 94%% of water when saturated\n", "Cactus");
 	/*testing = len + len2;*/
 	printf("%d %d %d", len, len3,  len4);
 
