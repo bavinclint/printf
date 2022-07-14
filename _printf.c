@@ -14,19 +14,19 @@
 int _printf(const char *format, ...)
 {
 	int len = _strlen(format);
-	char *mutformat = _ownstrdup(format);
+	const int initialLen = len;
 	int index = 0, uindex = 0;
-	char *updatedformat = malloc(len);
-	char *newformat;
-
+	char *updatedformat = malloc(sizeof(char) * len);
+	char *newformat, *anotherformat;
 	va_list ap;
+
 	va_start(ap, format);
-	
-	while (index < len)
+
+	while (index <= initialLen)
 	{
-		if (mutformat[index] == '%')
+		if (format[index] == '%')
 		{
-			if (mutformat[index + 1] == 'c')
+			if (format[index + 1] == 'c')
 			{
 				char character = va_arg(ap, int);
 				updatedformat[uindex] = character;
@@ -34,12 +34,12 @@ int _printf(const char *format, ...)
 				index += 2;
 				uindex++;
 			}
-			else if (mutformat[index + 1] == 's')
+			else if (format[index + 1] == 's')
 			{
-				char *myString = va_arg(ap, char *);
+				const char *myString = va_arg(ap, const char*);
 				int cLen = _strlen(myString);
-				len += cLen;
-				newformat = realloc(updatedformat, (len + cLen - 2));
+				len += cLen - 2;
+				newformat = realloc(updatedformat, sizeof(char) * len);
 				updatedformat = newformat;
 				updatedformat = _strncat(updatedformat, myString, uindex, cLen);
 				index += 2;
@@ -47,13 +47,14 @@ int _printf(const char *format, ...)
 			}
 		 } else
 		 {
-			updatedformat[uindex] = mutformat[index];
+			updatedformat[uindex] = format[index];
 			index++;
 			uindex++;
 		 }
 	}
 
-	free(mutformat);
+	anotherformat = realloc(updatedformat, sizeof(char) * len);
+	updatedformat = anotherformat;
 	_puts(updatedformat);
 	free(updatedformat);
 	return (len);

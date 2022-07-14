@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "Fixed Segmentation Fault"
+git commit -m "Fixed printing a char"
 git push
