@@ -37,13 +37,13 @@ int _printf(const char *format, ...)
 			else if (format[index + 1] == 's')
 			{
 				const char *myString = va_arg(ap, const char*);
-				int cLen = _strlen(myString);
-				len += cLen - 2;
+				int sLen = _strlen(myString);
+				len += sLen - 2;
 				newformat = realloc(updatedformat, sizeof(char) * len);
 				updatedformat = newformat;
-				updatedformat = _strncat(updatedformat, myString, uindex, cLen);
+				updatedformat = _strncat(updatedformat, myString, uindex);
 				index += 2;
-				uindex += cLen;
+				uindex += sLen;
 			}
 		 } else
 		 {

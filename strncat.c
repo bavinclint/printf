@@ -9,13 +9,15 @@
  *
  * Return: A pointer to the resulting string dest.
  */
-char *_strncat(char *dest, const char *src, int i, int n)
+char *_strncat(char *dest, const char *src, int i)
 {
 	int index = 0;
+	int len = strlen(src);
 
-	for (index = 0; src[index] && index < n; index++)
+	for (index = 0; index < len; index++)
 	{
 		dest[i] = src[index];
+		i++;
 	}
 
 	return (dest);

@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "Fixed printing a char"
+git commit -m "Fixed printing a string, only remaining now with betty"
 git push
