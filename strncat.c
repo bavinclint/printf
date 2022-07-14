@@ -12,7 +12,7 @@
 char *_strncat(char *dest, const char *src, int i)
 {
 	int index = 0;
-	int len = strlen(src);
+	int len = _strlen(src);
 
 	for (index = 0; index < len; index++)
 	{

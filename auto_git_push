@@ -1,4 +1,4 @@
 #!/bin/bash
 git add .
-git commit -m "Testing cases"
+git commit -m "Fixing implicit declaration errors"
 git push
